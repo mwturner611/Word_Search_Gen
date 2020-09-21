@@ -52,4 +52,21 @@ div {
 /* buttons */
 button {
     margin: 10px;
+    border-radius: 4px;
+    padding: 5px;
+}
+
+button:hover{
+    cursor: pointer;
+    opacity: 30%;
+    font-weight: bold;
+}
+
+#submit{
+    background-color: darkcyan;
+    color: whitesmoke;
+}
+
+#reset{
+    background-color: rgb(235, 235, 146);
 }
