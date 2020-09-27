@@ -70,3 +70,30 @@ button:hover{
 #reset{
     background-color: rgb(235, 235, 146);
 }
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(14, 40px);
+    grid-template-rows: 1em;
+    grid-auto-rows: 1em;
+    width: 45em;
+    height: 45em;
+}
+
+p{
+    padding: 0;
+    margin: 0;
+    /* background-color: lime; */
+    border-radius: 10px;
+    border-color: black;
+}
+
+ul{
+    padding: 0;
+    margin: 0;
+}
+
+li{
+    list-style-type: none;
+    padding-top: 20px;
+}
