@@ -211,12 +211,10 @@ let gridArray = {
     },
 };
 
-
+// fill the grid with content of full array
 const fillGrid = (array) => {
-
     for (let i = 1; i < 15; i++){
         
-
         for (let j = 1; j < 15; j++){
             let li = document.createElement("LI");
 
@@ -230,4 +228,17 @@ const fillGrid = (array) => {
     };
 };
 
+// generate random letter
+const randomLetter = () => {
+    const alphaArray = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"];
+
+    let nbr = Math.floor((Math.random() * 26) + 0);
+
+    return alphaArray[nbr];
+}
+
 fillGrid(gridArray);
+
+let newLetter = randomLetter();
+
+console.log(newLetter);
