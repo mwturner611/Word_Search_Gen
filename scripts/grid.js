@@ -243,10 +243,29 @@ const startPlace = () => {
 
     let y = Math.floor((Math.random() * 15) + 0);
 
-    return(x,y);
+    return([x,y]);
 }
 
-startPlace();
+// random direction
+const direction = () => {
+    const navDir = [[1,0],
+                    [-1,0],
+                    [0,1],
+                    [0,-1],
+                    [1,1],
+                    [1,-1],
+                    [-1,1],
+                    [-1,-1]    
+                    ];
+    
+    let nbr = Math.floor((Math.random() * 8) + 0);
+
+    return navDir[nbr];
+}
+
+console.log(startPlace());
+
+console.log(direction());
 
 // compare new letter to existing spot
 // const compare = (v,c,r,array) => {
