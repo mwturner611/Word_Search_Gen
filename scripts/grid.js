@@ -237,8 +237,22 @@ const randomLetter = () => {
     return alphaArray[nbr];
 }
 
+// find a random starting place on the grid
+const startPlace = () => {
+    let x = Math.floor((Math.random() * 15) + 0);
+
+    let y = Math.floor((Math.random() * 15) + 0);
+
+    return(x,y);
+}
+
+startPlace();
+
+// compare new letter to existing spot
+// const compare = (v,c,r,array) => {
+//     if(isNan(array[c][r]) && v == array[c][r])
+// }
+
 fillGrid(gridArray);
 
-let newLetter = randomLetter();
 
-console.log(newLetter);
