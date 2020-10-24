@@ -211,6 +211,16 @@ let gridArray = {
     },
 };
 
+// home button function
+const goHome = () => {
+    window.location.href = "index.html";
+}
+
+// print function
+const printGrid = () => {
+    console.log("Print now")
+}
+
 // fill the grid with content of full array
 const fillGrid = (array) => {
     for (let i = 1; i < 15; i++){
@@ -271,4 +281,6 @@ const direction = () => {
 
 fillGrid(gridArray);
 
-
+//create on click events for buttons
+document.getElementById("home").addEventListener("click", goHome);
+document.getElementById("print").addEventListener("click", printGrid);

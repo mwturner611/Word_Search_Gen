@@ -12,8 +12,17 @@ let userWords = [document.getElementById("word1"),
             ];
 
 
-// When form is submitted validate contents of form and create clean array of words
 const submitForm = () => {
+    
+    let wordArray = createWordArray();
+
+    window.location.href = "grid.html";
+
+}
+
+
+// When form is submitted validate contents of form and create clean array of words
+const createWordArray = () => {
 
     // enpty array for the words
     let finalArray = [];
