@@ -263,9 +263,6 @@ const direction = () => {
     return navDir[nbr];
 }
 
-console.log(startPlace());
-
-console.log(direction());
 
 // compare new letter to existing spot
 // const compare = (v,c,r,array) => {
