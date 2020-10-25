@@ -16,7 +16,8 @@ const submitForm = () => {
     
     let wordArray = createWordArray();
 
-    window.location.href = "grid.html";
+    console.log(wordArray);    
+    // window.location.href = "grid.html";
 
 }
 
