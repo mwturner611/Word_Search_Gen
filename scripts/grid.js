@@ -290,11 +290,30 @@ const measure = (start,dir,word) => {
         return "out of chart";
     }
     else{
-        return "Good to go";
+        writer(start,dir,word);
     }
 }
 
-console.log(measure([14,5],[1,0],["S","A","R","A","H"]));
+// put word on screen
+const writer = (start,dir,word) => {
+
+    let x = start[0];
+    let y = start[1];
+    
+    for (let i = 0; i < word.length; i++){
+ 
+       gridArray[x][y] = word[i];
+
+        x = x + dir[0];
+
+        y = y + dir[1];
+    }
+}
+
+console.log(measure([5,5],[-1,-1],["S","A","R","A","H"]));
+
+// writer([1,1],[1,1],["S","A","R","A","H"]);
+
 
 // compare new letter to existing spot
 // const compare = (v,c,r,array) => {
