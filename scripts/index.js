@@ -13,15 +13,11 @@ let userWords = [document.getElementById("word1"),
 
 
 const submitForm = () => {
-    
     let wordArray = createWordArray();
 
     window.localStorage.setItem("puzzle1",JSON.stringify(wordArray));
-    console.log(wordArray);    
-    // window.location.href = "grid.html";
-    console.log(JSON.parse(window.localStorage.getItem("puzzle1")));
-    
-
+       
+    window.location.href = "grid.html";
 }
 
 

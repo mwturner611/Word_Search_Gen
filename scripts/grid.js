@@ -221,23 +221,6 @@ const printGrid = () => {
     console.log("Print now")
 }
 
-// fill the grid with content of full array
-const fillGrid = (array) => {
-    for (let i = 1; i < 15; i++){
-        
-        for (let j = 1; j < 15; j++){
-            let li = document.createElement("LI");
-
-            let letter = document.createTextNode(array[i][j])
-
-            li.appendChild(letter)
-
-            document.getElementById("col"+i).appendChild(li);
-        };
-
-    };
-};
-
 // generate random letter
 const randomLetter = () => {
     const alphaArray = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"];
@@ -273,19 +256,6 @@ const direction = () => {
     return navDir[nbr];
 }
 
-// restart the single word placement process
-const restart = (word) => {
-
-    let start = startPlace();
-
-    let dir = direction();
-
-    measure(start,dir,word);
-
-    console.log("restart");
-}
-
-
 // CK if word fits and then call write to screen
 const measure = (start,dir,word) => {
 
@@ -297,23 +267,18 @@ const measure = (start,dir,word) => {
         if (x < 15 && x > 0 && y < 15 && y > 0){
             if(gridArray[x][y] === word[i] || gridArray[x][y] === "0"){
                 
-                console.log("letter is OK");
-
                 x += dir[0];
 
                 y += dir[1];
             }
             else{
-                console.log("Not ok, restart");
                 return(measure(startPlace(),direction(),word));
             }
         }
         else{
-            console.log("Not ok, restart");
             return(measure(startPlace(),direction(),word));
         }
     };
-    console.log("Write the word, it's all ok")
     writer(start,dir,word);
 };
 
@@ -333,12 +298,42 @@ const writer = (start,dir,word) => {
     }
 }
 
-// measure([1,1],[1,0],["S","A","R","A","H"]);
-// measure([1,1],[0,-1],["S","A","R","A","H"]);
-// measure([14,14],[0,-1],["S","A","R","A","H"]);
-measure([14,14],[0,1],["S","A","R","A","H"]);
+// fill the grid with content of full array
+const fillGrid = (array) => {
+    for (let i = 1; i < 15; i++){
+        
+        for (let j = 1; j < 15; j++){
+            let li = document.createElement("LI");
 
-fillGrid(gridArray);
+            let letter = "";
+
+            if(array[i][j] === "0"){
+                letter = document.createTextNode(randomLetter());
+            }
+            else{
+                letter = document.createTextNode(array[i][j]);
+                console.log("add ltr to screen");
+                console.log(array[i][j]);
+            }
+
+            li.appendChild(letter)
+
+            document.getElementById("col"+i).appendChild(li);
+        };
+
+    };
+};
+
+// Add all words to array
+const onGrid = (array) => {
+
+    for (let i = 0; i < array.length; i++){
+        measure(startPlace(),direction(),array[i]);
+    };
+    fillGrid(gridArray);  
+};
+
+onGrid(JSON.parse(window.localStorage.getItem("puzzle1")));
 
 //create on click events for buttons
 document.getElementById("home").addEventListener("click", goHome);
