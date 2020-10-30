@@ -273,26 +273,49 @@ const direction = () => {
     return navDir[nbr];
 }
 
-// Will a word fit
+// restart the single word placement process
+const restart = (word) => {
+
+    let start = startPlace();
+
+    let dir = direction();
+
+    measure(start,dir,word);
+
+    console.log("restart");
+}
+
+
+// CK if word fits and then call write to screen
 const measure = (start,dir,word) => {
 
-    let len = word.length -1;
+    let x = start[0];
 
-    let leftRight = len * dir[0];
+    let y = start[1];
+    
+    for(let i = 0; i < word.length; i++){
+        if (x < 15 && x > 0 && y < 15 && y > 0){
+            if(gridArray[x][y] === word[i] || gridArray[x][y] === "0"){
+                
+                console.log("letter is OK");
 
-    let upDown = len * dir[1];
+                x += dir[0];
 
-    let xTot = start[0] + leftRight;
-
-    let yTot = start[1] + upDown;
-
-    if (xTot < 1 || xTot > 14 || yTot < 1 || yTot > 14){
-        return "out of chart";
-    }
-    else{
-        writer(start,dir,word);
-    }
-}
+                y += dir[1];
+            }
+            else{
+                console.log("Not ok, restart");
+                return(measure(startPlace(),direction(),word));
+            }
+        }
+        else{
+            console.log("Not ok, restart");
+            return(measure(startPlace(),direction(),word));
+        }
+    };
+    console.log("Write the word, it's all ok")
+    writer(start,dir,word);
+};
 
 // put word on screen
 const writer = (start,dir,word) => {
@@ -301,24 +324,19 @@ const writer = (start,dir,word) => {
     let y = start[1];
     
     for (let i = 0; i < word.length; i++){
- 
+        
        gridArray[x][y] = word[i];
 
-        x = x + dir[0];
+        x += dir[0];
 
-        y = y + dir[1];
+        y += dir[1];
     }
 }
 
-console.log(measure([5,5],[-1,-1],["S","A","R","A","H"]));
-
-// writer([1,1],[1,1],["S","A","R","A","H"]);
-
-
-// compare new letter to existing spot
-// const compare = (v,c,r,array) => {
-//     if(isNan(array[c][r]) && v == array[c][r])
-// }
+// measure([1,1],[1,0],["S","A","R","A","H"]);
+// measure([1,1],[0,-1],["S","A","R","A","H"]);
+// measure([14,14],[0,-1],["S","A","R","A","H"]);
+measure([14,14],[0,1],["S","A","R","A","H"]);
 
 fillGrid(gridArray);
 
