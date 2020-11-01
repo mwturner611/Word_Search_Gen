@@ -8,13 +8,8 @@ div {
     text-align: center;
 }
 
-/* For mobile phones: */
-[class*="col-"] {
-    width: 100%;
-  }
-
   
-  @media only screen and (min-width: 768px) {
+
     /* For desktop: */
     .col-1 {width: 8.33%;}
     .col-2 {width: 16.66%;}
@@ -28,13 +23,29 @@ div {
     .col-10 {width: 83.33%;}
     .col-11 {width: 91.66%;}
     .col-12 {width: 100%;}
+    /* generic padding and float left of columns */
+   [class*="col-"] {
+        float: left;    
+        padding: 15px;
+    }
+
+
+/* For mobile phones: */
+@media only screen and (max-width: 768px) {
+    /* For mobile phones: */
+    [class*="col-"] {
+      width: 100%;
+      padding: 3px;
+    }
   }
 
-/* generic padding and float left of columns */
-[class*="col-"] {
-    float: left;    
-    padding: 15px;
-    
+
+  @media print
+{    
+    .breakBefore, .breakBefore *
+    {
+        display: none !important;
+    }
 }
 
 /* make items placed in column inside a row take on column's placement */
@@ -55,6 +66,7 @@ button {
     margin: 10px;
     border-radius: 4px;
     padding: 5px;
+    width: 15%;
 }
 
 button:hover{
@@ -99,4 +111,15 @@ ul{
 li{
     list-style-type: none;
     padding-top: 20px;
+}
+
+.col-3{
+    justify-content: center;
+}
+
+#searchWords1{
+    text-align: center;
+}
+#searchWords2{
+    text-align: center;
 }
