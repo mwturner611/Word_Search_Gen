@@ -324,9 +324,13 @@ const fillGrid = (array) => {
 
 // list search words above the grid
 const searchWords = (array) => {
+    let list1 = Math.floor(array.length/2);
+    console.log(list1);
+    
     for (let i = 0; i < array.length; i++){
+    
         let li = document.createElement("LI");
-        
+
         for (let j = 0; j < array[i].length; j++){
 
             let letter = document.createTextNode(array[i][j]);
@@ -334,8 +338,12 @@ const searchWords = (array) => {
             li.appendChild(letter)
         };
 
-        document.getElementById("searchWords").appendChild(li);
+        if(i < list1){
+            document.getElementById("searchWords1").appendChild(li);}
+        else{
+            document.getElementById("searchWords2").appendChild(li);}
     };
+        
 };
 
 const title = (title) => {
