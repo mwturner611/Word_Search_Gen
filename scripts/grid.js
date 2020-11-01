@@ -334,7 +334,6 @@ const searchWords = (array) => {
             li.appendChild(letter)
         };
 
-        console.log(li);
         document.getElementById("searchWords").appendChild(li);
     };
 };
@@ -357,7 +356,7 @@ const onGrid = (array) => {
     searchWords(array);  
 };
 
-title("Title");
+title(JSON.parse(window.localStorage.getItem("titleWord")));
 onGrid(JSON.parse(window.localStorage.getItem("puzzle1")));
 
 //create on click events for buttons

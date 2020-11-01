@@ -10,10 +10,14 @@ let userWords = [document.getElementById("word1"),
                 document.getElementById("word9"),
                 document.getElementById("word10")
             ];
-
+let title = document.getElementById("titleWord");
 
 const submitForm = () => {
     let wordArray = createWordArray();
+
+    let titleWord = title.value;
+
+    window.localStorage.setItem("titleWord",JSON.stringify(titleWord));
 
     window.localStorage.setItem("puzzle1",JSON.stringify(wordArray));
        
