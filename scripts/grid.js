@@ -218,7 +218,7 @@ const goHome = () => {
 
 // print function
 const printGrid = () => {
-    console.log("Print now")
+    window.print();
 }
 
 // generate random letter
