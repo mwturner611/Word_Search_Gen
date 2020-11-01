@@ -32,8 +32,9 @@ div {
 
 /* generic padding and float left of columns */
 [class*="col-"] {
-    float: left;
+    float: left;    
     padding: 15px;
+    
 }
 
 /* make items placed in column inside a row take on column's placement */
@@ -78,6 +79,8 @@ button:hover{
     grid-auto-rows: 1em;
     width: 45em;
     height: 45em;
+    margin-bottom: 0%;
+    justify-content: center;
 }
 
 p{

@@ -312,8 +312,6 @@ const fillGrid = (array) => {
             }
             else{
                 letter = document.createTextNode(array[i][j]);
-                console.log("add ltr to screen");
-                console.log(array[i][j]);
             }
 
             li.appendChild(letter)
@@ -324,7 +322,7 @@ const fillGrid = (array) => {
     };
 };
 
-// list search words on right side of grid
+// list search words above the grid
 const searchWords = (array) => {
     for (let i = 0; i < array.length; i++){
         let li = document.createElement("LI");
@@ -336,8 +334,17 @@ const searchWords = (array) => {
             li.appendChild(letter)
         };
 
+        console.log(li);
         document.getElementById("searchWords").appendChild(li);
     };
+};
+
+const title = (title) => {
+
+    if (title){
+        document.getElementById("title").innerHTML=`${title}`
+    }
+    else{document.getElementById("title").innerHTML =`Word Search`;};
 };
 
 // Add all words to array
@@ -350,6 +357,7 @@ const onGrid = (array) => {
     searchWords(array);  
 };
 
+title("Title");
 onGrid(JSON.parse(window.localStorage.getItem("puzzle1")));
 
 //create on click events for buttons
