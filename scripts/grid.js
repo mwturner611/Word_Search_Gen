@@ -324,13 +324,30 @@ const fillGrid = (array) => {
     };
 };
 
+// list search words on right side of grid
+const searchWords = (array) => {
+    for (let i = 0; i < array.length; i++){
+        let li = document.createElement("LI");
+        
+        for (let j = 0; j < array[i].length; j++){
+
+            let letter = document.createTextNode(array[i][j]);
+    
+            li.appendChild(letter)
+        };
+
+        document.getElementById("searchWords").appendChild(li);
+    };
+};
+
 // Add all words to array
 const onGrid = (array) => {
 
     for (let i = 0; i < array.length; i++){
         measure(startPlace(),direction(),array[i]);
     };
-    fillGrid(gridArray);  
+    fillGrid(gridArray);
+    searchWords(array);  
 };
 
 onGrid(JSON.parse(window.localStorage.getItem("puzzle1")));
