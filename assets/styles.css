@@ -89,16 +89,14 @@ button:hover{
     grid-template-columns: repeat(14, 40px);
     grid-template-rows: 1em;
     grid-auto-rows: 1em;
-    width: 45em;
-    height: 45em;
-    margin-bottom: 0%;
+    height: 35em; 
     justify-content: center;
 }
+
 
 p{
     padding: 0;
     margin: 0;
-    /* background-color: lime; */
     border-radius: 10px;
     border-color: black;
 }

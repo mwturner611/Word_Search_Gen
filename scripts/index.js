@@ -12,6 +12,7 @@ let userWords = [document.getElementById("word1"),
             ];
 let title = document.getElementById("titleWord");
 
+// handle the form submit
 const submitForm = () => {
     let wordArray = createWordArray();
 
