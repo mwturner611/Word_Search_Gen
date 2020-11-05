@@ -1,6 +1,6 @@
 <img alt="License" src="https://img.shields.io/badge/-MIT License-blue">
 
-# Word_Search_Gen
+# Word Search Generator!
 ###### Description
 This app generates a word search from a list of up to 10 words you enter!  
 
@@ -21,9 +21,16 @@ Heroku, JavaScript, HTML and CSS
 * [Contacts](#contacts)
 
 ## Pictures
+### Home Page
 <img src="assets/homePage.JPG">
+---
+
+### Grid Page
 <img src="assets/grid.JPG">
 <img src="assets/gridButtons.JPG">
+---
+
+### Print Screen
 <img src="assets/printScreen.JPG">
 
 ## Usage 
