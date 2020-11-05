@@ -27,7 +27,7 @@ Heroku, JavaScript, HTML and CSS
 
 ### Grid Page
 <img src="assets/grid.JPG">
-<img src="assets/gridButtons.JPG">
+<img src="assets/updateGridButtons.JPG">
 ---
 
 ### Print Screen
