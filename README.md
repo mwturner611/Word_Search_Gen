@@ -4,7 +4,7 @@
 ###### Description
 This app generates a word search from a list of up to 10 words you enter!  
 
-<!-- [Click here to live link](https://quizzler-app.herokuapp.com/) -->
+[Click here to live link](https://word-search-gen.herokuapp.com/)
 
 ## Contributors
 * mwturner611
