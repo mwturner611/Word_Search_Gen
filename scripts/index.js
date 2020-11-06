@@ -16,6 +16,9 @@ let title = document.getElementById("titleWord");
 const submitForm = () => {
     let wordArray = createWordArray();
 
+    if (wordArray.length <= 0){
+        return;
+    }
     let titleWord = title.value;
 
     window.localStorage.setItem("titleWord",JSON.stringify(titleWord));
@@ -39,7 +42,7 @@ const createWordArray = () => {
         if (userWords[i].value.length !== undefined && userWords[i].value.length > 14) {
             let word = userWords[i].value;
             alertWords("smallHeader",word);
-            return;
+            return [];
         }
         // if the field has an acceptable value, send it to the finalArray
         else if (userWords[i].value.length > 0 && userWords[i].value.length < 15){
@@ -61,6 +64,8 @@ const alertWords = (id,word) => {
     h5.appendChild(longWord);
 
     document.getElementById(id).appendChild(h5).style.color = "red";
+
+    return;
 };
 
 // clear the words in the form
